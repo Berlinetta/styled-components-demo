@@ -1,7 +1,7 @@
 var person = 'Mike';
 var age = 28;
 
-function myTag(strings, personExp, ageExp) {
+function myTag(strings, personExp, ageExp, nameExp) {
     var str0 = strings[0]; // "That "
     var str1 = strings[1]; // " is a "
 
@@ -19,10 +19,10 @@ function myTag(strings, personExp, ageExp) {
 
     // We can even return a string built using a template literal
     //return `${str0}${personExp}${str1}${ageStr}`;
-    return {personExp, ageExp};
+    return { personExp, ageExp };
 }
 
-var output = myTag`That ${ person } is a ${ age }`;
+var output = myTag`That ${person} is a ${age}, ${props => props.name}`;
 
 console.log(output);
 // That Mike is a youngster
